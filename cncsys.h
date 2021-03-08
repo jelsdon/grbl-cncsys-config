@@ -4,7 +4,7 @@
 
 // Not (yet) hooked up
 //#define SPINDLE_OUTPUT_PIN      GPIO_NUM_2
-//#define PROBE_PIN               GPIO_NUM_4  // labeled Probe
+#define PROBE_PIN               GPIO_NUM_4  // labeled Probe
 
 #define X_STEP_PIN              GPIO_NUM_12
 #define X_DIRECTION_PIN         GPIO_NUM_13
@@ -54,9 +54,9 @@
 #define DEFAULT_Y_MAX_TRAVEL 720.0
 #define DEFAULT_Z_MAX_TRAVEL 135.0
 
-#define DEFAULT_X_MAX_RATE 7200
-#define DEFAULT_Y_MAX_RATE 7200
-#define DEFAULT_Z_MAX_RATE 7200
+#define DEFAULT_X_MAX_RATE 3500
+#define DEFAULT_Y_MAX_RATE 3500
+#define DEFAULT_Z_MAX_RATE 3500
 
 
 // Cycle Start, Feed Hold, Reset, Safety Door.
