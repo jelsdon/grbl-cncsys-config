@@ -48,6 +48,12 @@
 #define DEFAULT_HOMING_SEEK_RATE        1500.0 // mm/min
 #define DEFAULT_HOMING_DEBOUNCE_DELAY   250 // msec (0-65k)
 #define DEFAULT_HOMING_PULLOFF          2.0 // mm
+#define DEFAULT_HOMING_CYCLE_0      bit(Z_AXIS)
+#define DEFAULT_HOMING_CYCLE_1      bit(X_AXIS)
+#define DEFAULT_HOMING_CYCLE_2      bit(Y_AXIS)
+#define DEFAULT_HOMING_SQUARED_AXES bit(Y_AXIS)
+#define DEFAULT_HOMING_DIR_MASK     (bit(X_AXIS) | bit (Y_AXIS))
+#define DEFAULT_HOMING_INIT_LOCK    # Must home on startup
 
 // XYZ Defaults
 #define DEFAULT_X_STEPS_PER_MM 320.0
@@ -69,11 +75,6 @@
 //#define INVERT_LIMIT_PIN_MASK B0000
 
 
-#define DEFAULT_HOMING_CYCLE_0      bit(Z_AXIS)
-#define DEFAULT_HOMING_CYCLE_1      bit(X_AXIS)
-#define DEFAULT_HOMING_CYCLE_2      bit(Y_AXIS)
-#define DEFAULT_HOMING_SQUARED_AXES bit(Y_AXIS)
-#define DEFAULT_HOMING_DIR_MASK     (bit(X_AXIS) | bit (Y_AXIS))
 
 #define DEFAULT_SOFT_LIMIT_ENABLE 1
 #define DEFAULT_HARD_LIMIT_ENABLE 1
