@@ -15,7 +15,7 @@
 #define Y_DIRECTION_PIN         GPIO_NUM_26
 
 #define Y2_STEP_PIN             GPIO_NUM_32
-#define Y2_DIRECTION_PIN        GPIO_NUM_33
+#define Y2_DIRECTION_PIN        GPIO_NUM_26
 
 #define Z_STEP_PIN              GPIO_NUM_21
 #define Z_DIRECTION_PIN         GPIO_NUM_22
@@ -35,7 +35,7 @@
 // 20! 24! 28! 29! 30! 31!  ''Not on ESP32s''
 
 // Not (yet) hooked up
-//#define CONTROL_RESET_PIN           GPIO_NUM_34  // needs external pullup
+//#define CONTROL_RESET_PIN           GPIO_NUM_34  // needs external pullup   --- Used on probe
 //#define CONTROL_FEED_HOLD_PIN       GPIO_NUM_35  // needs external pullup
 //#define CONTROL_CYCLE_START_PIN     GPIO_NUM_36  // needs external pullup
 
