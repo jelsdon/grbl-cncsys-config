@@ -172,3 +172,4 @@ Huanyang:
   spinup_ms: 12
   spindown_ms: 12
   speed_map: 0=0% 0=30% 7200=30% 24000=100%
+
