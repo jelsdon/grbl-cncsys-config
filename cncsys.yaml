@@ -23,16 +23,16 @@ axes:
     max_travel_mm: 450
     homing:
       cycle: 2
-      mpos_mm: 2
+      mpos_mm: 0
       positive_direction: false
       seek_mm_per_min: 1500
-      feed_mm_per_min: 50
+      feed_mm_per_min: 100
       settle_ms: 200
       seek_scaler: 1.100
-      feed_scaler: 1.100
+      feed_scaler: 1.01
 
     motor0:
-      limit_neg_pin: gpio.15:low:pd
+      limit_neg_pin: gpio.15:high:pd
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: true
@@ -52,16 +52,15 @@ axes:
     max_travel_mm: 720
     homing:
       cycle: 2
-      mpos_mm: 2
+      mpos_mm: 0
       positive_direction: false
       seek_mm_per_min: 1500
-      feed_mm_per_min: 50
+      feed_mm_per_min: 100
       settle_ms: 200
       seek_scaler: 1.100
-      feed_scaler: 1.100
-      
+      feed_scaler: 1.01
     motor0:
-      limit_neg_pin: gpio.16:low:pd
+      limit_neg_pin: gpio.16:high:pd
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: true
@@ -71,14 +70,14 @@ axes:
         direction_pin: gpio.26
         disable_pin: NO_PIN
     motor1:
-      limit_neg_pin: gpio.16:low:pd
+      limit_neg_pin: gpio.39:high
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: true
       pulloff_mm: 2.000
       standard_stepper:
         step_pin: gpio.32
-        direction_pin: gpio.26
+        direction_pin: NO_PIN
         disable_pin: NO_PIN
 
   z:
@@ -89,16 +88,15 @@ axes:
     max_travel_mm: 135
     homing:
       cycle: 1
-      mpos_mm: 2
+      mpos_mm: 0
       positive_direction: true
       seek_mm_per_min: 1500
-      feed_mm_per_min: 50
+      feed_mm_per_min: 100
       settle_ms: 200
       seek_scaler: 1.100
-      feed_scaler: 1.100
-      
+      feed_scaler: 1.01
     motor0:
-      limit_neg_pin: gpio.17:low:pd
+      limit_neg_pin: gpio.17:high:pd
       limit_pos_pin: NO_PIN
       limit_all_pin: NO_PIN
       hard_limits: true
@@ -120,7 +118,7 @@ sdcard:
   cs_pin: gpio.5
 
 probe:
-  pin: gpio.34:low:pd
+  pin: gpio.34:low
   check_mode_start: false
 
 control:
