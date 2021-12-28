@@ -25,12 +25,22 @@
 
 #define X_LIMIT_PIN             GPIO_NUM_15
 #define Y_LIMIT_PIN             GPIO_NUM_16
+#define Y2_LIMIT_PIN            GPIO_NUM_39
 #define Z_LIMIT_PIN             GPIO_NUM_17
 
-#define PROBE_PIN                 GPIO_NUM_34  // labeled Probe
+#define PROBE_PIN               GPIO_NUM_34  // labeled Probe
 #define DEFAULT_INVERT_PROBE_PIN 1
 
-// 39(input only, needs pu/pd) 
+
+// Spindle/Type=Laser
+//
+//    To Enable: Send Grbl a $32=1 command.
+//    To Disable: Send Grbl a $32=0 command.
+
+#define SPINDLE_PWM_BIT_PRECISION 10
+#define SPINDLE_PWM_BASE_FREQ   20000
+#define LASER_OUTPUT_PIN        GPIO_NUM_33
+
 // 37! 38! ''not typically available, input only, need pu/pd''
 // 20! 24! 28! 29! 30! 31!  ''Not on ESP32s''
 
@@ -49,8 +59,7 @@
 #define DEFAULT_HOMING_DEBOUNCE_DELAY   250 // msec (0-65k)
 #define DEFAULT_HOMING_PULLOFF          2.0 // mm
 #define DEFAULT_HOMING_CYCLE_0      bit(Z_AXIS)
-#define DEFAULT_HOMING_CYCLE_1      bit(X_AXIS)
-#define DEFAULT_HOMING_CYCLE_2      bit(Y_AXIS)
+#define DEFAULT_HOMING_CYCLE_1      (bit(X_AXIS) | bit (Y_AXIS))
 #define DEFAULT_HOMING_SQUARED_AXES bit(Y_AXIS)
 #define DEFAULT_HOMING_DIR_MASK     (bit(X_AXIS) | bit (Y_AXIS))
 #define DEFAULT_HOMING_INIT_LOCK    # Must home on startup
