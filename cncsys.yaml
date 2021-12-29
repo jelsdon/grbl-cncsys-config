@@ -9,7 +9,7 @@ start:
 stepping:
   engine: RMT
   idle_ms: 255
-  pulse_us: 2
+  pulse_us: 3
   dir_delay_us: 1
   disable_delay_us: 0
 
