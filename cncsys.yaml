@@ -23,7 +23,7 @@ axes:
     max_travel_mm: 450
     homing:
       cycle: 2
-      mpos_mm: 0
+      mpos_mm: -2.0
       positive_direction: false
       seek_mm_per_min: 1500
       feed_mm_per_min: 100
@@ -52,7 +52,7 @@ axes:
     max_travel_mm: 720
     homing:
       cycle: 2
-      mpos_mm: 0
+      mpos_mm: -2.0
       positive_direction: false
       seek_mm_per_min: 1500
       feed_mm_per_min: 100
@@ -88,7 +88,7 @@ axes:
     max_travel_mm: 135
     homing:
       cycle: 1
-      mpos_mm: 0
+      mpos_mm: 2
       positive_direction: true
       seek_mm_per_min: 1500
       feed_mm_per_min: 100
