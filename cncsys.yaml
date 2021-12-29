@@ -169,5 +169,13 @@ Huanyang:
   tool_num: 0
   spinup_ms: 12
   spindown_ms: 12
-  speed_map: 0=0% 0=30% 7200=30% 24000=100%
+  speed_map: 0=0.000% 0=30.000% 7200=30.000% 24000=100%
 
+Laser:
+  pwm_hz: 20000
+  output_pin: gpio.33
+  enable_pin: NO_PIN
+  disable_with_s0: false
+  s0_with_disable: true
+  tool_num: 1
+  speed_map: 0=0.000% 1000=100.000%
