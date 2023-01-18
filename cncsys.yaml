@@ -7,14 +7,15 @@ start:
   check_limits: true
 
 stepping:
-  engine: RMT
+  engine: I2S_STREAM
   idle_ms: 255
-  pulse_us: 3
+  pulse_us: 4
   dir_delay_us: 1
   disable_delay_us: 0
 
+
 axes:
-  shared_stepper_disable_pin: gpio.14:high
+  shared_stepper_disable_pin: NO_PIN
   x:
     soft_limits: true
     steps_per_mm: 320
@@ -23,7 +24,7 @@ axes:
     max_travel_mm: 450
     homing:
       cycle: 2
-      mpos_mm: -2.0
+      mpos_mm: 0
       positive_direction: false
       seek_mm_per_min: 1500
       feed_mm_per_min: 100
@@ -32,15 +33,13 @@ axes:
       feed_scaler: 1.01
 
     motor0:
-      limit_neg_pin: gpio.15:high:pd
-      limit_pos_pin: NO_PIN
-      limit_all_pin: NO_PIN
+      limit_neg_pin: gpio.39:high:pu
       hard_limits: true
       pulloff_mm: 2.000
       standard_stepper:
-        step_pin: gpio.12
-        direction_pin: gpio.13
-        disable_pin: NO_PIN
+        step_pin: I2SO.1
+        direction_pin: I2SO.2
+        disable_pin: I2SO.0
     motor1:
       null_motor:
 
@@ -52,7 +51,7 @@ axes:
     max_travel_mm: 720
     homing:
       cycle: 2
-      mpos_mm: -2.0
+      mpos_mm: 0
       positive_direction: false
       seek_mm_per_min: 1500
       feed_mm_per_min: 100
@@ -60,25 +59,21 @@ axes:
       seek_scaler: 1.100
       feed_scaler: 1.01
     motor0:
-      limit_neg_pin: gpio.16:high:pd
-      limit_pos_pin: NO_PIN
-      limit_all_pin: NO_PIN
+      limit_neg_pin: gpio.36:high:pu
       hard_limits: true
       pulloff_mm: 2.000
       standard_stepper:
-        step_pin: gpio.25
-        direction_pin: gpio.26
-        disable_pin: NO_PIN
+        step_pin: I2SO.4
+        direction_pin: I2SO.5
+        disable_pin: I2SO.7
     motor1:
-      limit_neg_pin: gpio.39:high
-      limit_pos_pin: NO_PIN
-      limit_all_pin: NO_PIN
+      limit_neg_pin: gpio.33:high:pu
       hard_limits: true
       pulloff_mm: 2.000
       standard_stepper:
-        step_pin: gpio.32
-        direction_pin: NO_PIN
-        disable_pin: NO_PIN
+        step_pin: I2SO.9
+        direction_pin: I2SO.10
+        disable_pin: I2SO.8
 
   z:
     soft_limits: true
@@ -88,7 +83,7 @@ axes:
     max_travel_mm: 135
     homing:
       cycle: 1
-      mpos_mm: 2
+      mpos_mm: 0
       positive_direction: true
       seek_mm_per_min: 1500
       feed_mm_per_min: 100
@@ -96,17 +91,20 @@ axes:
       seek_scaler: 1.100
       feed_scaler: 1.01
     motor0:
-      limit_neg_pin: gpio.17:high:pd
-      limit_pos_pin: NO_PIN
-      limit_all_pin: NO_PIN
+      limit_neg_pin: gpio.32:high:pu
       hard_limits: true
       pulloff_mm: 2.000
       standard_stepper:
-        step_pin: gpio.21
-        direction_pin: gpio.22
-        disable_pin: NO_PIN
+        step_pin: I2SO.12
+        direction_pin: I2SO.13
+        disable_pin: I2SO.15
     motor1:
       null_motor:
+
+i2so:
+  bck_pin: gpio.22
+  data_pin: gpio.21
+  ws_pin: gpio.17
 
 spi:
   miso_pin: gpio.19
@@ -118,7 +116,8 @@ sdcard:
   cs_pin: gpio.5
 
 probe:
-  pin: gpio.34:low
+  pin: NO_PIN
+  pin: gpio.35:low:pu
   check_mode_start: false
 
 control:
@@ -160,9 +159,9 @@ user_outputs:
 
 Huanyang:
   uart:
-    txd_pin: gpio.4
-    rxd_pin: gpio.27
-    rts_pin: gpio.2
+    txd_pin: gpio.26
+    rxd_pin: gpio.16
+    rts_pin: gpio.4
     baud: 9600
     mode: 8N1
   modbus_id: 1
@@ -173,7 +172,7 @@ Huanyang:
 
 Laser:
   pwm_hz: 20000
-  output_pin: gpio.33
+  output_pin: gpio.25
   enable_pin: NO_PIN
   disable_with_s0: false
   s0_with_disable: true
