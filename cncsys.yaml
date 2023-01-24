@@ -9,9 +9,9 @@ start:
 stepping:
   engine: I2S_STREAM
   idle_ms: 255
-  pulse_us: 4
-  dir_delay_us: 1
-  disable_delay_us: 0
+  pulse_us: 8
+  dir_delay_us: 4
+  disable_delay_us: 4
 
 
 axes:
@@ -20,7 +20,7 @@ axes:
     soft_limits: true
     steps_per_mm: 320
     max_rate_mm_per_min: 6000
-    acceleration_mm_per_sec2: 80
+    acceleration_mm_per_sec2: 40
     max_travel_mm: 450
     homing:
       cycle: 2
@@ -47,7 +47,7 @@ axes:
     soft_limits: true
     steps_per_mm: 320
     max_rate_mm_per_min: 6000
-    acceleration_mm_per_sec2: 80
+    acceleration_mm_per_sec2: 40
     max_travel_mm: 720
     homing:
       cycle: 2
@@ -79,7 +79,7 @@ axes:
     soft_limits: true
     steps_per_mm: 320
     max_rate_mm_per_min: 6000
-    acceleration_mm_per_sec2: 80
+    acceleration_mm_per_sec2: 40
     max_travel_mm: 135
     homing:
       cycle: 1
