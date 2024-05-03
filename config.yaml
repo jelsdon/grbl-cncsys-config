@@ -117,7 +117,7 @@ sdcard:
 
 probe:
   pin: NO_PIN
-  pin: gpio.35:low:pu
+  pin: gpio.35:low
   check_mode_start: false
 
 control:
