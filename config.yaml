@@ -135,14 +135,6 @@ coolant:
   mist_pin: NO_PIN
   delay_ms: 0
 
-  macros:
-  startup_line0:
-  startup_line1:
-  macro0:
-  macro1:
-  macro2:
-  macro3:
-
 user_outputs:
   analog0_pin: NO_PIN
   analog1_pin: NO_PIN
