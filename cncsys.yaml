@@ -168,5 +168,5 @@ Laser:
   enable_pin: NO_PIN
   disable_with_s0: false
   s0_with_disable: true
-  tool_num: 1
+  tool_num: 250
   speed_map: 0=0.000% 1000=100.000%
