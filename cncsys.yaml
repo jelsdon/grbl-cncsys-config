@@ -33,7 +33,7 @@ axes:
       feed_scaler: 1.01
 
     motor0:
-      limit_neg_pin: gpio.39:high:pu
+      limit_neg_pin: gpio.39:high
       hard_limits: true
       pulloff_mm: 2.000
       standard_stepper:
@@ -59,7 +59,7 @@ axes:
       seek_scaler: 1.100
       feed_scaler: 1.01
     motor0:
-      limit_neg_pin: gpio.36:high:pu
+      limit_neg_pin: gpio.36:high
       hard_limits: true
       pulloff_mm: 2.000
       standard_stepper:
@@ -117,7 +117,7 @@ sdcard:
 
 probe:
   pin: NO_PIN
-  pin: gpio.35:low:pu
+  pin: gpio.35:low
   check_mode_start: false
 
 control:
@@ -134,14 +134,6 @@ coolant:
   flood_pin: NO_PIN
   mist_pin: NO_PIN
   delay_ms: 0
-
-  macros:
-  startup_line0:
-  startup_line1:
-  macro0:
-  macro1:
-  macro2:
-  macro3:
 
 user_outputs:
   analog0_pin: NO_PIN
@@ -172,7 +164,7 @@ Huanyang:
 
 Laser:
   pwm_hz: 20000
-  output_pin: gpio.25
+  output_pin: gpio.2
   enable_pin: NO_PIN
   disable_with_s0: false
   s0_with_disable: true
