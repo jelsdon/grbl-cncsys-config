@@ -116,8 +116,8 @@ sdcard:
   cs_pin: gpio.5
 
 probe:
-  pin: NO_PIN
   pin: gpio.35:low
+  toolsetter_pin: gpio.34:low
   check_mode_start: false
 
 control:
@@ -161,6 +161,7 @@ Huanyang:
   spinup_ms: 12000
   spindown_ms: 12000
   speed_map: 0=0.000% 0=30.000% 7200=30.000% 24000=100%
+  atc: atc_manual
 
 Laser:
   pwm_hz: 20000
@@ -170,3 +171,11 @@ Laser:
   s0_with_disable: true
   tool_num: 250
   speed_map: 0=0.000% 1000=100.000%
+
+atc_manual:
+  safe_z_mpos_mm: -1.000000
+  probe_seek_rate_mm_per_min: 800.000000
+  probe_feed_rate_mm_per_min: 80.000000
+  change_mpos_mm: 365.000 3.000 -1.000
+  ets_mpos_mm: 365.000 3.000 -120.000
+  ets_rapid_z_mpos_mm: -25.000000
