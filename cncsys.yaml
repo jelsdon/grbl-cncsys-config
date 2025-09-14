@@ -6,6 +6,20 @@ start:
   deactivate_parking: false
   check_limits: true
 
+uart2:
+  txd_pin: gpio.14
+  rxd_pin: gpio.13
+  rts_pin: NO_PIN
+  cts_pin: NO_PIN
+  baud: 1000000
+  mode: 8N1
+  passthrough_baud: 57600
+  passthrough_mode: 8E1
+
+uart_channel2:
+  report_interval_ms: 75
+  uart_num: 2
+
 stepping:
   engine: I2S_STREAM
   idle_ms: 255
@@ -117,7 +131,8 @@ sdcard:
 
 probe:
   pin: gpio.35:low
-  toolsetter_pin: gpio.34:low
+  #toolsetter_pin: gpio.34:low
+  toolsetter_pin: uart_channel2.0:high
   check_mode_start: false
 
 control:
@@ -125,6 +140,7 @@ control:
   reset_pin: NO_PIN
   feed_hold_pin: NO_PIN
   cycle_start_pin: NO_PIN
+  estop_pin: uart_channel2.1:high
   macro0_pin: NO_PIN
   macro1_pin: NO_PIN
   macro2_pin: NO_PIN
@@ -174,22 +190,9 @@ Laser:
 
 atc_manual:
   safe_z_mpos_mm: -1.000000
-  probe_seek_rate_mm_per_min: 800.000000
-  probe_feed_rate_mm_per_min: 80.000000
-  change_mpos_mm: 365.000 3.000 -1.000
-  ets_mpos_mm: 365.000 3.000 -120.000
-  ets_rapid_z_mpos_mm: -25.000000
+  probe_seek_rate_mm_per_min: 200.000000
+  probe_feed_rate_mm_per_min: 40.000000
+  change_mpos_mm: 410.000 300.000 -1.000
+  ets_mpos_mm: 366.000 14.000 -73.000
+  ets_rapid_z_mpos_mm: -33.000000
 
-uart2:
-  txd_pin: gpio.14
-  rxd_pin: gpio.13
-  rts_pin: NO_PIN
-  cts_pin: NO_PIN
-  baud: 1000000
-  mode: 8N1
-  passthrough_baud: 57600
-  passthrough_mode: 8E1
-
-uart_channel2:
-  report_interval_ms: 75
-  uart_num: 2
